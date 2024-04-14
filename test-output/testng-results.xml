@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-01T19:06:22 CEST" name="Suite" finished-at="2024-04-01T19:06:28 CEST" duration-ms="5684">
+    <groups>
+    </groups>
+    <test started-at="2024-04-01T19:06:22 CEST" name="Test" finished-at="2024-04-01T19:06:28 CEST" duration-ms="5684">
+      <class name="ExerciseTen">
+        <test-method is-config="true" signature="setup()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:22 CEST" name="setup" finished-at="2024-04-01T19:06:25 CEST" duration-ms="2376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="initializePage()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:25 CEST" name="initializePage" finished-at="2024-04-01T19:06:25 CEST" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializePage -->
+        <test-method signature="LoginWithCorrectUsernameAndIncorrectPassword()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:25 CEST" name="LoginWithCorrectUsernameAndIncorrectPassword" finished-at="2024-04-01T19:06:25 CEST" duration-ms="762" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginWithCorrectUsernameAndIncorrectPassword -->
+        <test-method is-config="true" signature="initializePage()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:25 CEST" name="initializePage" finished-at="2024-04-01T19:06:26 CEST" duration-ms="91" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializePage -->
+        <test-method signature="LoginWithCorrectUsernameAndPassword()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:26 CEST" name="LoginWithCorrectUsernameAndPassword" finished-at="2024-04-01T19:06:26 CEST" duration-ms="650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginWithCorrectUsernameAndPassword -->
+        <test-method is-config="true" signature="initializePage()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:26 CEST" name="initializePage" finished-at="2024-04-01T19:06:26 CEST" duration-ms="93" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializePage -->
+        <test-method signature="LoginWithEmptyUsernameAndPassword()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:26 CEST" name="LoginWithEmptyUsernameAndPassword" finished-at="2024-04-01T19:06:27 CEST" duration-ms="620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginWithEmptyUsernameAndPassword -->
+        <test-method is-config="true" signature="initializePage()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:27 CEST" name="initializePage" finished-at="2024-04-01T19:06:27 CEST" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializePage -->
+        <test-method signature="LoginWithIncorrectUsername()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:27 CEST" name="LoginWithIncorrectUsername" finished-at="2024-04-01T19:06:28 CEST" duration-ms="615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginWithIncorrectUsername -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:ExerciseTen@2805d709]" started-at="2024-04-01T19:06:28 CEST" name="quit" finished-at="2024-04-01T19:06:28 CEST" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- ExerciseTen -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
