@@ -58,11 +58,10 @@ public class StatsPage implements Table {
 		return rows.size();
 	}
 
+	//test commit
 
 	@Override
 	public String getText(int row, int col) {
-	    // count rows with size() method
-	    //List<WebElement> rows = table.findElements(By.tagName("tr"));
 
 	    // Iterate rows of table
 	    for (int i = 0; i < rows.size(); i++) {
