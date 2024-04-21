@@ -1,3 +1,6 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -12,6 +15,7 @@ import PageObjects.StatsPage;
 import PageObjects.WelcomePage;
 
 public class BaseClass {
+	
 	public static MenuPage menu;
 	public static LoginPage login;
 	public static AdminPage admin;
@@ -40,8 +44,10 @@ public class BaseClass {
 	
 	
 	//@AfterAll
-	@AfterClass
-	public static void quit() {
+	//@AfterClass
+	/*public static void quit() {
 		DriverManager.getDriver().quit();
-	}
+	}*/
+
+
 }

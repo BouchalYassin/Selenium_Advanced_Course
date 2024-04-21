@@ -4,7 +4,11 @@
   
   <test thread-count="5" name="JavascriptExercise">
     <classes>
-      <class name="AdvancedExercises"/>
+      <class name="AdvancedExercises">
+		<methods>
+               <include name="TestUsingCustomExpectedCondition" />
+        </methods>
+      </class>  
     </classes>
    </test> <!-- Test -->
 </suite> <!-- Suite -->

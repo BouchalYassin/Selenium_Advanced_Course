@@ -5,10 +5,9 @@
     <classes>
       <class name="AdvancedExercises">
         <methods>
-          <include name="TestUsingJavascriptFunction"/>
           <include name="initializePage"/>
           <include name="setup"/>
-          <include name="quit"/>
+          <include name="TestUsingCustomExpectedCondition"/>
         </methods>
       </class> <!-- AdvancedExercises -->
     </classes>

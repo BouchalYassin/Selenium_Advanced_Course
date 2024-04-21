@@ -15,7 +15,7 @@ public class MyConnectionsPage {
 	@FindBy(how = How.ID, using = "searchTerm")
 	private WebElement fldSearch;
 	
-	@FindBy(how = How.ID, using = "Peter;Parker")
+	@FindBy(how = How.ID, using = "records")
 	private WebElement row;
 	
 	//constructor

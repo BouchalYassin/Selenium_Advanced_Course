@@ -3,16 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ExerciseTen">
+      <class name="AdvancedExercises">
         <methods>
-          <include name="LoginWithCorrectUsernameAndPassword"/>
+          <include name="TestUsingJavascriptFunction"/>
           <include name="initializePage"/>
-          <include name="LoginWithEmptyUsernameAndPassword"/>
+          <include name="setup"/>
           <include name="quit"/>
-          <include name="LoginWithCorrectUsernameAndIncorrectPassword"/>
-          <include name="LoginWithIncorrectUsername"/>
+          <include name="TestUsingCustomExpectedCondition"/>
         </methods>
-      </class> <!-- ExerciseTen -->
+      </class> <!-- AdvancedExercises -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
