@@ -1,7 +1,4 @@
 import java.util.Set;
-
-import org.openqa.selenium.support.PageFactory;
-
 import Helper.DriverManager;
 import PageObjects.AdminPage;
 import PageObjects.LoginPage;
@@ -14,15 +11,10 @@ public class ExerciseSevenBis {
 		// Go to https://app-tst-training.azurewebsites.net/
 		DriverManager.getDriver().navigate().to("https://app-tst-training.azurewebsites.net/");
 	
-		MenuPage menu = new MenuPage(DriverManager.getDriver());
-		LoginPage login = new LoginPage(DriverManager.getDriver());
-		AdminPage admin = new AdminPage(DriverManager.getDriver());
-		StatsPage stats = new StatsPage(DriverManager.getDriver());
-		
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), admin);
-		PageFactory.initElements(DriverManager.getDriver(), stats);
+		MenuPage menu = new MenuPage();
+		LoginPage login = new LoginPage();
+		AdminPage admin = new AdminPage();
+		StatsPage stats = new StatsPage();
 		
 		menu.logout();
 		login.loginAsAdmin();

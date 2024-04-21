@@ -3,7 +3,6 @@
 //import org.junit.jupiter.api.BeforeAll;
 //import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,7 +13,6 @@ import Helper.DriverManager;
 import PageObjects.AdminPage;
 import PageObjects.LoginPage;
 import PageObjects.MenuPage;
-import PageObjects.StatsPage;
 import PageObjects.WelcomePage;
 
 public class ExerciseTen {
@@ -30,16 +28,10 @@ public class ExerciseTen {
 		
 		DriverManager.getDriver().navigate().to("https://app-tst-training.azurewebsites.net/");
 		
-		menu = new MenuPage(DriverManager.getDriver());
-		login = new LoginPage(DriverManager.getDriver());
-		admin = new AdminPage(DriverManager.getDriver());
-		welcome = new WelcomePage(DriverManager.getDriver());
-		
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), admin);
-		PageFactory.initElements(DriverManager.getDriver(), welcome);
-		
+		menu = new MenuPage();
+		login = new LoginPage();
+		admin = new AdminPage();
+		welcome = new WelcomePage();
 		
 	}
 	

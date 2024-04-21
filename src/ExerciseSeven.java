@@ -1,13 +1,7 @@
 import PageObjects.AdminPage;
 import PageObjects.LoginPage;
 import PageObjects.MenuPage;
-
 import java.util.Set;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-
 import Helper.DriverManager;
 
 public class ExerciseSeven {
@@ -16,14 +10,10 @@ public class ExerciseSeven {
 		// Go to https://app-tst-training.azurewebsites.net/
 		DriverManager.getDriver().navigate().to("https://app-tst-training.azurewebsites.net/");
 	
-		MenuPage menu = new MenuPage(DriverManager.getDriver());
-		LoginPage login = new LoginPage(DriverManager.getDriver());
-		AdminPage admin = new AdminPage(DriverManager.getDriver());
-		
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), admin);
-		
+		MenuPage menu = new MenuPage();
+		LoginPage login = new LoginPage();
+		AdminPage admin = new AdminPage();
+
 		menu.logout();
 		login.loginAsAdmin();
 		
@@ -49,6 +39,7 @@ public class ExerciseSeven {
 		
 		//Alert popup = DriverManager.getDriver().switchTo().alert();
 		String popupText = admin.getPopupText();
+		System.out.println("Pop up text is: " + popupText);
 		
 		// closing the popup
 		admin.closePopup();

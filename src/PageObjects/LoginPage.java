@@ -30,12 +30,10 @@ public class LoginPage {
 	@FindBy(how = How.ID, using = "errors")
 	private WebElement errorMessage;
 	
-	private WebDriver driver;
 	
 	//constructor
-	public LoginPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public LoginPage() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	
 	public WelcomePage loginWith(String username, String password, String language) {
@@ -45,7 +43,7 @@ public class LoginPage {
 		fldPassword.sendKeys(password);
 		setLanguage(language);
 		btnLogin.click();
-		return new WelcomePage(DriverManager.getDriver());
+		return new WelcomePage();
 	}
 	
 	public boolean isShown() {
@@ -69,7 +67,7 @@ public class LoginPage {
 		fldPassword.sendKeys("superduper");
 		setLanguage("French");
 		btnLogin.click();
-		return new WelcomePage(DriverManager.getDriver());
+		return new WelcomePage();
 	}
 
 }

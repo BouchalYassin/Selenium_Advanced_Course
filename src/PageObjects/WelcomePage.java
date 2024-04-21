@@ -1,10 +1,11 @@
 package PageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import Helper.DriverManager;
 
 public class WelcomePage {
 	
@@ -17,12 +18,10 @@ public class WelcomePage {
 	@FindBy(how = How.ID, using = "bear")
 	private WebElement bearImage;
 	
-	private WebDriver driver;
 	
 	//constructor
-	public WelcomePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public WelcomePage() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	
 	public String getWecolmeMessage() {

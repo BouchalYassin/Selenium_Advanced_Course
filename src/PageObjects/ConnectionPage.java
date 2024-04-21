@@ -1,6 +1,5 @@
 package PageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -8,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import DataHolder.Connection;
+import Helper.DriverManager;
 
 public class ConnectionPage {
 	
@@ -47,12 +47,10 @@ public class ConnectionPage {
 	@FindBy(how = How.ID, using = "newRecord")
 	private WebElement page;
 	
-	private WebDriver driver;
 
 	//constructor
-	public ConnectionPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public ConnectionPage() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	
 	public boolean isShown() {
@@ -61,8 +59,9 @@ public class ConnectionPage {
 	
 	public ConnectionPage goToConnectionPage() {
 		newTab.click();
-		return new ConnectionPage(driver);
+		return new ConnectionPage();
 	}
+	
 	
 	public ConnectionPage addConnection(Connection conn) {
 		fldFirstName.sendKeys(conn.getFirstName());
@@ -90,4 +89,6 @@ public class ConnectionPage {
 		btnAdd.click();
 		return this;
 	}
+	
+
 }

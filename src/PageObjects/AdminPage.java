@@ -2,7 +2,7 @@ package PageObjects;
 
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -39,12 +39,10 @@ public class AdminPage {
 	@FindBy(how = How.ID, using = "inccorect")
 	private WebElement bntNotExist;
 	
-	private WebDriver driver;
 	
 	//constructor
-	public AdminPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public AdminPage() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	
 	public boolean isShown() {
@@ -54,7 +52,7 @@ public class AdminPage {
 	
 	public AdminPage goToAdminPage() {
 		btnAdmin.click();
-		return new AdminPage(driver);
+		return new AdminPage();
 	}
 	
 	public AdminPage clickOnResetUsers() {
@@ -96,5 +94,19 @@ public class AdminPage {
 		bntNotExist.click();
 		return this;
 	}
+	
+	// Javascript functions
+	
+	public void resetAddressBook(boolean value) {
+        // Execute JavaScript function to reset connections
+        ((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].click();", btnResetConnections);
+    }
+	
+	public void populateForTesting(boolean value) {
+        // Execute JavaScript function to reset connections
+        ((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].click();", btnPopulateRecords);
+    }
+	
+	
 
 }

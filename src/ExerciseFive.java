@@ -1,7 +1,3 @@
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-
 import Helper.DriverManager;
 import PageObjects.LoginPage;
 import PageObjects.MenuPage;
@@ -18,14 +14,9 @@ public class ExerciseFive {
 		DriverManager.getDriver().navigate().to("https://app-tst-training.azurewebsites.net/");
 		//driver.manage().window().maximize();
 		
-		MenuPage menu = new MenuPage(DriverManager.getDriver());
-		LoginPage login = new LoginPage(DriverManager.getDriver());
-		WelcomePage welcome = new WelcomePage(DriverManager.getDriver());
-		
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), welcome);
-		
+		MenuPage menu = new MenuPage();
+		LoginPage login = new LoginPage();
+		WelcomePage welcome = new WelcomePage();
 		
 		menu.logout();
 		//login.loginWith("admin", "superduper", "French");

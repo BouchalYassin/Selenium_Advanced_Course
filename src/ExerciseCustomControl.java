@@ -1,5 +1,3 @@
-import org.openqa.selenium.support.PageFactory;
-
 import DataHolder.Connection;
 import Helper.DriverManager;
 import PageObjects.ConnectionPage;
@@ -26,15 +24,11 @@ public class ExerciseCustomControl {
 		conn.setSeniority("Senior");
 		conn.setAdditionalInfo("This is a test using Data Holder class!");
 					
-		MenuPage menu = new MenuPage(DriverManager.getDriver());
-		LoginPage login = new LoginPage(DriverManager.getDriver());
-		ConnectionPage connection = new ConnectionPage(DriverManager.getDriver());
-		StatsPage stats = new StatsPage(DriverManager.getDriver());
-						
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), connection);
-		PageFactory.initElements(DriverManager.getDriver(), stats);
+		MenuPage menu = new MenuPage();
+		LoginPage login = new LoginPage();
+		ConnectionPage connection = new ConnectionPage();
+		StatsPage stats = new StatsPage();
+		StatsConnectionsTable table = new StatsConnectionsTable();
 		
 						
 		menu.logout();
@@ -50,11 +44,11 @@ public class ExerciseCustomControl {
 		stats.goToStatsPage();
 		
 		// Checking data in the table
-		System.out.println("Number of rows in the table: " + stats.getRowCount());
+		System.out.println("Number of rows in the table: " + table.getRowCount());
 		
 		int row = 4;
 		int col = 0;
-		System.out.println("Text in row " + row + " and col " + col + " is: " + stats.getText(row, col));
+		System.out.println("Text in row " + row + " and col " + col + " is: " + table.getText(row, col));
 		
 		DriverManager.getDriver().quit();
 

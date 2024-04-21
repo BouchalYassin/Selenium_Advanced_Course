@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;*/
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -30,17 +29,10 @@ public class ExerciseEleven {
 		
 		DriverManager.getDriver().navigate().to("https://app-tst-training.azurewebsites.net/");
 		
-		menu = new MenuPage(DriverManager.getDriver());
-		login = new LoginPage(DriverManager.getDriver());
-		admin = new AdminPage(DriverManager.getDriver());
-		welcome = new WelcomePage(DriverManager.getDriver());
-		
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), admin);
-		PageFactory.initElements(DriverManager.getDriver(), welcome);
-		
-		
+		menu = new MenuPage();
+		login = new LoginPage();
+		admin = new AdminPage();
+		welcome = new WelcomePage();
 	}
 	
 	//@BeforeEach

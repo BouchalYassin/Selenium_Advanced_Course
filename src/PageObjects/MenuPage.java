@@ -1,22 +1,20 @@
 package PageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import Helper.DriverManager;
 
 public class MenuPage {
 	
 	@FindBy(how = How.ID, using = "logout")
 	private WebElement btnLogout;
 	
-	private WebDriver driver;
-	
 	//constructor
-	public MenuPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public MenuPage() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	
 	public boolean isShown() {
@@ -25,7 +23,7 @@ public class MenuPage {
 	
 	public LoginPage logout() {
 		btnLogout.click();
-		return new LoginPage(driver);
+		return new LoginPage();
 	}
 
 }
