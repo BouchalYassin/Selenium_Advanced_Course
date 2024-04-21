@@ -97,6 +97,13 @@ public class AdvancedExercises extends BaseClass {
 		Assert.assertTrue(elements);
 	}
 	
+	@Test
+	public void TestUsingImageRecognition() {
+		login.loginWith("admin", "superduper", "French");
+		welcome.displayTheBear();
+		
+		Assert.assertTrue(welcome.isTheBearDisplayed());
+	}
 
 	
 	

@@ -6,7 +6,7 @@
     <classes>
       <class name="AdvancedExercises">
 		<methods>
-               <include name="TestUsingCustomExpectedCondition" />
+               <include name="TestUsingImageRecognition" />
         </methods>
       </class>  
     </classes>
