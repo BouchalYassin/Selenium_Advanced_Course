@@ -67,5 +67,7 @@
 	<classpathentry kind="lib" path="C:/Users/ybouchal/OneDrive - CTG/TAC 2024/Selenium/selenium-java-4.18.1/selenium-support-4.18.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ybouchal/OneDrive - CTG/TAC 2024/Selenium/selenium-java-4.18.1/selenium-support-4.18.1-sources.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/ybouchal/Downloads/extentreports-2.41.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ybouchal/Downloads/freemarker-2.3.32.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

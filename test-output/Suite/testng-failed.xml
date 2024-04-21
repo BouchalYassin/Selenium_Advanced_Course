@@ -5,9 +5,12 @@
     <classes>
       <class name="AdvancedExercises">
         <methods>
+          <include name="TestUsingImageRecognition"/>
           <include name="initializePage"/>
           <include name="setup"/>
-          <include name="TestUsingCustomExpectedCondition"/>
+          <include name="endTest"/>
+          <include name="startTest"/>
+          <include name="quit"/>
         </methods>
       </class> <!-- AdvancedExercises -->
     </classes>

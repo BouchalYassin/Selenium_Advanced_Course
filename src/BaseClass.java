@@ -44,10 +44,11 @@ public class BaseClass {
 	
 	
 	//@AfterAll
-	//@AfterClass
-	/*public static void quit() {
+	@AfterClass
+	public static void quit() {
 		DriverManager.getDriver().quit();
-	}*/
+		
+	}
 
 
 }

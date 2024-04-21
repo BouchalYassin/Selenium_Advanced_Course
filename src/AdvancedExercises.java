@@ -1,23 +1,41 @@
 import static org.testng.Assert.assertFalse;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import DataHolder.Connection;
 import Helper.ChildAvailable;
 import Helper.DriverManager;
 
 public class AdvancedExercises extends BaseClass {
+	
+	public static ExtentTest test;
+	public static ExtentReports report;
 	
 	@FindBy(how = How.ID, using = "myrecords")
     private WebElement divMyConnections;
@@ -97,12 +115,61 @@ public class AdvancedExercises extends BaseClass {
 		Assert.assertTrue(elements);
 	}
 	
+	@BeforeClass
+	public static void startTest()
+	{
+		report = new ExtentReports("C:\\Users\\ybouchal\\OneDrive - CTG\\TAC 2024\\Selenium\\Java\\testReport.html");
+		test = report.startTest("My Custom Report");
+	}
+	
 	@Test
 	public void TestUsingImageRecognition() {
+		test.log(LogStatus.INFO, "Connection to the site...");
 		login.loginWith("admin", "superduper", "French");
-		welcome.displayTheBear();
+		
+		test.log(LogStatus.INFO, "Clicking on the 'Show me' button");
+		//welcome.displayTheBear();
+		
+		test.log(LogStatus.INFO, "Checking if the bear image is displayed");
+		if (welcome.isTheBearDisplayed()) {
+			test.log(LogStatus.PASS, "The Bear is displayed!");
+		}
+		else {
+			// if test fails => add screenshot
+			try {
+				test.log(LogStatus.FAIL,test.addScreenCapture(capture(DriverManager.getDriver()))+ "Test Failed, the bear is not displayed");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
 		
 		Assert.assertTrue(welcome.isTheBearDisplayed());
+		
+	}
+	
+	public static String capture(WebDriver driver) throws IOException {
+		File scrFile = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
+		// Get the current timestamp 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss"); 
+        String timestamp = dateFormat.format(new Date());
+		File Dest = new File("C:\\Users\\ybouchal\\OneDrive - CTG\\TAC 2024\\Selenium\\Java\\" + timestamp
+		+ ".png");
+		String errflpath = Dest.getAbsolutePath();
+		FileHandler.copy(scrFile, Dest);
+		return errflpath;
+		}
+	
+	@AfterMethod
+	public static void endTest()
+	{
+		report.endTest(test);
+		report.flush();
+	}
+	
+	@Test
+	public void GenerateCustomReport() {
+		
 	}
 
 	
